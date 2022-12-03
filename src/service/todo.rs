@@ -18,7 +18,7 @@ impl TodoService for TodoServiceImpl {
         self.repository.get_all()
     }
 
-    fn get_by_id(&self, id: i32) -> Result<Option<Todo>, Box<dyn Error>> {
+    fn get_by_id(&self, id: i64) -> Result<Option<Todo>, Box<dyn Error>> {
         self.repository.get_by_id(id)
     }
 
@@ -26,15 +26,15 @@ impl TodoService for TodoServiceImpl {
         self.repository.create(todo)
     }
 
-    fn update(&self, todo: crate::domain::todo::UpdateTodo) -> Result<Option<Todo>, Box<dyn Error>> {
-        self.repository.update(todo)
+    fn update(&self, id: i64, todo: crate::domain::todo::UpdateTodo) -> Result<Option<Todo>, Box<dyn Error>> {
+        self.repository.update(id, todo)
     }
 
-    fn mark_complemeted(&self, id: i32) -> Result<Option<Todo>, Box<dyn Error>> {
-        self.repository.mark_complemeted(id)
+    fn mark_completed(&self, id: i64) -> Result<Option<Todo>, Box<dyn Error>> {
+        self.repository.mark_completed(id)
     }
 
-    fn mark_uncompleted(&self, id: i32) -> Result<Option<Todo>, Box<dyn Error>> {
+    fn mark_uncompleted(&self, id: i64) -> Result<Option<Todo>, Box<dyn Error>> {
         self.repository.mark_uncompleted(id)
     }
 }

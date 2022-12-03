@@ -3,7 +3,7 @@ use serde::Serialize;
 
 #[derive(Deserialize, Serialize, PartialEq, Eq, Debug, Clone)]
 pub struct Todo {
-    pub id: i32,
+    pub id: i64,
     pub title: String,
     pub description: String,
     pub completed: bool,

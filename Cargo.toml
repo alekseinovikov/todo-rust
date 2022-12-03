@@ -10,4 +10,10 @@ actix-web = "4"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1"
 env_logger = "0.10"
+dotenv_codegen = "0.15"
+home = "0.5"
 log = "0.4"
+dotenv = "0.15"
+r2d2 = "0.8"
+rusqlite = { version = "0.28", features = ["bundled"] }
+r2d2_sqlite = "0.21"
